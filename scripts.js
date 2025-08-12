@@ -350,7 +350,6 @@
         initialTextInput.disabled = !initialTextCheckbox.checked;
         if (!initialTextCheckbox.checked) {
             initialTextInput.value = '';
-            initialTextInput.placeholder = 'Character set disabled';
         }
         saveSettings();
         updateUIState();
@@ -367,4 +366,5 @@
         window.crypto.getRandomValues(array);
         return array[0] % max;
     }
+
 })();
