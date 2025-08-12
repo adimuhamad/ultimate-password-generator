@@ -5,7 +5,7 @@ Aplikasi web ini adalah alat canggih untuk menghasilkan kata sandi yang kuat dan
 ## ✨ Fitur Unggulan
 
 -   **Kontrol Penuh:** Atur panjang (minimal 8, maksimal 32) dan jumlah (minimal 1, maksimal 8) kata sandi yang ingin kamu hasilkan dengan mudah menggunakan tombol `+` dan `-`.
--   **Kustomisasi Karakter:** Pilih kombinasi karakter yang kamu suka, seperti angka, huruf kecil, huruf besar, simbol, dan bahkan karakter yang dipersonalisasi seperti `áíúéó`.
+-   **Kustomisasi Karakter:** Pilih kombinasi karakter yang kamu suka, seperti **angka, huruf kecil, huruf besar, simbol**, dan bahkan karakter yang dipersonalisasi seperti `áíúéó`.
 -   **Opsi Keamanan Ekstra:** Tingkatkan kekuatan kata sandi dengan opsi untuk:
     -   ❌ **Kecualikan Karakter Mirip:** Hindari karakter yang sering disalahartikan, seperti `1`, `I`, `l`, `L`, `o`, `O`, dan `0`.
     -   ❌ **Kecualikan Karakter Ambigu:** Hapus simbol yang bisa membingungkan, seperti `~`, `,`, `.`, `:`, `;`, `^`, `/`, `|`, `\`, `(`, `)`, `<`.
@@ -32,4 +32,5 @@ Aplikasi web ini adalah alat canggih untuk menghasilkan kata sandi yang kuat dan
 3.  Klik tombol **"GENERATE PASSWORD NOW!"** untuk melihat hasilnya.
 4.  Gunakan tombol salin di samping setiap kata sandi atau tombol **"Copy All Passwords"** di bawah untuk menyalin semua kata sandi sekaligus.
 
-Selamat mencoba dan tetap aman, Adhiya! 😉👍
+## 📸 Screenshot
+<img width="412" height="622" alt="image" src="https://github.com/user-attachments/assets/9a950c33-7533-412f-a7ac-d9a81c46d7c3" />
