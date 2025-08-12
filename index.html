@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Ultimate Password Generator</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.4.2/zxcvbn.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+    <h2>Password Generator</h2>
+
+    <div class="theme-toggle" id="theme-toggle">☀️</div>
+
+    <div class="number-control" id="length-control-container" style="margin-bottom: 1px;">
+        <label>Password Length: <b><span id="length-val">15</span></b></label>
+        <div>
+            <button id="dec-length">−</button>
+            <button id="inc-length">+</button>
+        </div>
+    </div>
+
+    <div class="number-control" id="count-control-container" style="margin-top: 1px;">
+        <label>Passwords Count: <b><span id="count-val">2</span></b></label>
+        <div>
+            <button id="dec-count">−</button>
+            <button id="inc-count">+</button>
+        </div>
+    </div>
+    
+    <div class="option">
+        <input type="checkbox" id="add-initial-text-checkbox">
+        <label for="add-initial-text-checkbox" style="margin-right: 108px;">Add Initial Text:</label>
+        <input type="text" id="initial-text-input" placeholder="Add your initial text here" disabled>
+    </div>
+
+    <div class="option">
+        <input type="checkbox" id="include-numbers">
+        <label for="include-numbers">Include numbers:&nbsp;</label><span style="color: var(--secondary-text)">
+        <label for="include-numbers">0123456789</label></span>
+    </div>
+
+    <div class="option">
+        <input type="checkbox" id="include-lowercase">
+        <label for="include-lowercase">Include lowercase:&nbsp;</label><span style="color: var(--secondary-text)">
+        <label for="include-lowercase">abcdefghijklmnopqrstuvwxyz</label></span>
+    </div>
+
+    <div class="option">
+        <input type="checkbox" id="include-uppercase">
+        <label for="include-uppercase">Include uppercase:&nbsp;</label><span style="color: var(--secondary-text)">
+        <label for="include-uppercase">ABCDEFGHIJKLMNOPQRSTUVWXYZ</label></span>
+    </div>
+
+    <div class="option">
+        <input type="checkbox" id="include-symbols">
+        <label for="include-symbols">Include symbols:&nbsp;</label><span style="color: var(--secondary-text)">
+        <label for="include-symbols">$%&@#~,.:;!?_*-+^=/|\()<>{}[]'`"</label></span>
+    </div>
+
+    <div class="option">
+        <input type="checkbox" id="include-personalized">
+        <label for="include-personalized">Include personalized:&nbsp;</label><span style="color: var(--secondary-text)">
+        <label for="include-personalized">áíúéó</label></span>
+    </div>
+
+    <div class="option">
+        <input type="checkbox" id="exclude-similar">
+        <label for="exclude-similar">Exclude similar:&nbsp;</label><span style="color: var(--secondary-text)">
+        <label for="exclude-similar">1IiLlOo0</label></span>
+    </div>
+
+    <div class="option">
+        <input type="checkbox" id="exclude-ambiguous">
+        <label for="exclude-ambiguous">Exclude ambiguous:&nbsp;</label><span style="color: var(--secondary-text)">
+        <label for="exclude-ambiguous">~,.:;^/|\()<>{}[]'`"</label></span>
+    </div>
+
+    <div class="option">
+        <input type="checkbox" id="exclude-duplicates">
+        <label for="exclude-duplicates">Exclude all duplicate characters</label>
+    </div>
+
+    <div class="option">
+        <input type="checkbox" id="exclude-consecutive">
+        <label for="exclude-consecutive">Exclude consecutive duplicate characters</label>
+    </div>
+
+    <button class="generate-btn" id="generate-btn">GENERATE PASSWORD NOW!</button>
+    
+    <div id="password-list"></div>
+</div>
+
+<div id="toast-container"></div>
+
+<script src="scripts.js"></script>
+</body>
+</html>

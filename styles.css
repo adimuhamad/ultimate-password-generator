@@ -1,0 +1,317 @@
+:root {
+    --bg-color: #f0f2f5;
+    --card-bg: #ffffff;
+    --text-color: #333333;
+    --secondary-text: #666666;
+    --border-color: #e0e0e0;
+    --accent-color: #2e8b57;
+    --button-bg: #2e8b57;
+    --button-text: #ffffff;
+    --button-hover: #287a4c;
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    --input-bg: #f8f8f8;
+    --input-border: #cccccc;
+    --danger-color: #e74c3c;
+    --toast-bg: #333;
+    --toast-text: #fff;
+}
+
+body.dark-mode {
+    --bg-color: #2c3e50;
+    --card-bg: #34495e;
+    --text-color: #ecf0f1;
+    --secondary-text: #bdc3c7;
+    --border-color: #44607a;
+    --button-bg: #3498db;
+    --button-text: #ffffff;
+    --button-hover: #2980b9;
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+    --input-bg: #4c627a;
+    --input-border: #6d849b;
+    --danger-color: #e74c3c;
+    --toast-bg: #ecf0f1;
+    --toast-text: #333;
+}
+
+body {
+    font-family: 'Inter', 'Segoe UI', Tahoma, sans-serif;
+    background: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    margin: 0;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.container {
+    background: var(--card-bg);
+    border-radius: 16px;
+    padding: 30px;
+    width: 100%;
+    max-width: 425px;
+    box-shadow: var(--shadow);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+h2 {
+    margin-top: 0;
+    text-align: center;
+    font-weight: 700;
+    color: var(--accent-color);
+    letter-spacing: -0.5px;
+}
+
+.number-control {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 15px 0;
+    padding: 10px 15px;
+    background: var(--input-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.number-control label {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--secondary-text);
+    display: flex;
+    align-items: center;
+}
+
+.number-control b {
+    font-size: 1.2rem;
+    margin-left: 8px;
+    color: var(--text-color);
+}
+
+.number-control div {
+    display: flex;
+    gap: 8px;
+}
+
+.number-control button {
+    padding: 8px 12px;
+    border: none;
+    background: var(--button-bg);
+    color: var(--button-text);
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s, opacity 0.3s;
+}
+
+.number-control button:hover:not(:disabled) {
+    background: var(--button-hover);
+}
+
+.number-control button:disabled {
+    background: var(--border-color);
+    color: var(--secondary-text);
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.option {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    flex-wrap: wrap;
+}
+
+.option input[type=checkbox] {
+    margin-right: 12px;
+    cursor: pointer;
+    accent-color: var(--accent-color);
+}
+
+.generate-btn {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background: var(--button-bg);
+    color: var(--button-text);
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.3s, opacity 0.3s;
+}
+
+.generate-btn:hover:not(:disabled) {
+    background: var(--button-hover);
+}
+
+.generate-btn:disabled {
+    background: var(--border-color);
+    color: var(--secondary-text);
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.password-item {
+    margin-top: 8px;
+    padding: 8px;
+    background: var(--input-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+.password-text {
+    font-family: 'Fira Code', monospace;
+    font-size: 1.1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+.strength-bar {
+    height: 8px;
+    border-radius: 4px;
+    margin-top: 10px;
+    background: var(--border-color);
+}
+
+.strength-fill {
+    height: 100%;
+    border-radius: 4px;
+    transition: width 0.3s, background-color 0.3s;
+}
+
+.strength-info {
+    font-size: 0.9rem;
+    margin-top: 8px;
+    color: var(--secondary-text);
+}
+
+.copy-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: var(--secondary-text);
+    transition: color 0.3s;
+}
+
+.copy-btn:hover {
+    color: var(--accent-color);
+}
+
+.all-actions {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.all-actions .copy-all-btn {
+    padding: 10px 20px;
+    border: 1px solid var(--accent-color);
+    background: transparent;
+    color: var(--accent-color);
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.all-actions .copy-all-btn:hover {
+    background: var(--accent-color);
+    color: var(--button-text);
+}
+
+/* Stackable Toast Container */
+#toast-container {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 1000;
+    pointer-events: none;
+}
+
+.toast {
+    background: var(--toast-bg);
+    color: var(--toast-text);
+    padding: 12px 20px;
+    border-radius: 8px;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: all;
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: var(--shadow);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* CSS tambahan untuk input teks awal */
+#initial-text-option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+#initial-text-input {
+    padding: 8px 10px;
+    border: 1px solid var(--input-border);
+    border-radius: 8px;
+    background: var(--input-bg);
+    color: var(--text-color);
+    flex-grow: 1;
+    transition: all 0.3s;
+}
+
+#initial-text-input:disabled {
+    background: var(--border-color);
+    cursor: not-allowed;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+        align-items: flex-start;
+    }
+    #toast-container {
+        bottom: unset;
+        right: unset;
+        top: 20px;
+        left: 20px;
+        flex-direction: column-reverse;
+    }
+}
