@@ -19,11 +19,16 @@
     const initialTextInput = document.getElementById('initial-text-input');
 
     const CHARSETS = {
+        // Include
         numbers: "0123456789",
         lowercase: "abcdefghijklmnopqrstuvwxyz",
         uppercase: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
         symbols: "$%&@#~,.:;!?_*-+^=/|\\()<>{}[]'`\"",
-        personalized: "áéíóú",
+        personalized: "ÁáÉéÍíÓóÚúÝýĆćŃńŔŕŚśŹźǴǵḰḱĹĺṔṕŚśẂẃ",
+        currency: "₽€¥£₸₮₩₡₵₭₱₲₦ƒ₥₼৳₹₾₪₺₴ლ",
+        mathematics: "±×÷∫∑√∂∇≈≠≡≤≥⊂⊃⊆⊇⊕⊗°",
+        physics: "αβγδεηθλμνπρστφχψω∞ΔΣΩ",
+        // Exclude 
         similar: "1IiLlOo0",
         ambiguous: "~,.:;^/|\\()<>{}[]'`\"",
     };
@@ -47,6 +52,9 @@
                 includeUppercase: document.getElementById('include-uppercase').checked,
                 includeSymbols: document.getElementById('include-symbols').checked,
                 includePersonalized: document.getElementById('include-personalized').checked,
+                includeCurrency: document.getElementById('include-currency').checked,
+                includeMathematics: document.getElementById('include-mathematics').checked,
+                includePhysics: document.getElementById('include-physics').checked,
                 excludeSimilar: document.getElementById('exclude-similar').checked,
                 excludeAmbiguous: document.getElementById('exclude-ambiguous').checked,
                 excludeDuplicates: document.getElementById('exclude-duplicates').checked,
@@ -85,6 +93,9 @@
             document.getElementById('include-uppercase').checked = settings.options.includeUppercase;
             document.getElementById('include-symbols').checked = settings.options.includeSymbols;
             document.getElementById('include-personalized').checked = settings.options.includePersonalized;
+            document.getElementById('include-currency').checked = settings.options.includeCurrency;
+            document.getElementById('include-mathematics').checked = settings.options.includeMathematics;
+            document.getElementById('include-physics').checked = settings.options.includePhysics;
             document.getElementById('exclude-similar').checked = settings.options.excludeSimilar;
             document.getElementById('exclude-ambiguous').checked = settings.options.excludeAmbiguous;
             document.getElementById('exclude-duplicates').checked = settings.options.excludeDuplicates;
@@ -110,6 +121,10 @@
             document.getElementById('include-lowercase').checked = true;
             document.getElementById('include-uppercase').checked = true;
             document.getElementById('include-symbols').checked = true;
+            document.getElementById('include-personalized').checked = true;
+            document.getElementById('include-currency').checked = true;
+            document.getElementById('include-mathematics').checked = true;
+            document.getElementById('include-physics').checked = true;
             document.getElementById('exclude-similar').checked = true;
             document.getElementById('exclude-ambiguous').checked = true;
             
@@ -197,6 +212,9 @@
         if (document.getElementById("include-uppercase").checked) charset += CHARSETS.uppercase;
         if (document.getElementById("include-symbols").checked) charset += CHARSETS.symbols;
         if (document.getElementById("include-personalized").checked) charset += CHARSETS.personalized;
+        if (document.getElementById("include-currency").checked) charset += CHARSETS.currency;
+        if (document.getElementById("include-mathematics").checked) charset += CHARSETS.mathematics;
+        if (document.getElementById("include-physics").checked) charset += CHARSETS.physics;
 
         if (document.getElementById("exclude-similar").checked) charset = charset.replace(new RegExp(`[${CHARSETS.similar.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}]`, 'g'), "");
         if (document.getElementById("exclude-ambiguous").checked) charset = charset.replace(new RegExp(`[${CHARSETS.ambiguous.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}]`, 'g'), "");
@@ -366,5 +384,4 @@
         window.crypto.getRandomValues(array);
         return array[0] % max;
     }
-
 })();
