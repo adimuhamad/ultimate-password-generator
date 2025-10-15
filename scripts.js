@@ -1,5 +1,5 @@
 (() => {
-
+    // DOM Elements
     const lengthVal = document.getElementById('length-val');
     const countVal = document.getElementById('count-val');
     const generateBtn = document.getElementById('generate-btn');
@@ -12,6 +12,7 @@
     const incCountBtn = document.getElementById('inc-count');
     const decCountBtn = document.getElementById('dec-count');
 
+    // Custom Options Elements
     const prefixCheckbox = document.getElementById('add-prefix-text-checkbox');
     const prefixInput = document.getElementById('prefix-text-input');
     const suffixCheckbox = document.getElementById('add-suffix-text-checkbox');
@@ -34,7 +35,7 @@
         lowercase: "abcdefghijklmnopqrstuvwxyz",
         uppercase: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
         symbols: "$%&@#~,.:;!?_*-+^=/|\\()<>{}[]'`\"",
-        personalized: "ÁáÉéÍíÓóÚúÝýĆćŃńŔŕŚśŹźǴǵḰḱĹĺṔṕŚśẂẃ",
+        accuteAccent: "ÁáÉéÍíÓóÚúÝýĆćŃńŔŕŚśŹźǴǵḰḱĹĺṔṕŚśẂẃ",
         currency: "₽€¥£₸₮₩₡₵₭₱₲₦ƒ₥₼৳₹₾₪₺₴ლ",
         mathematics: "±×÷∫∑√∂∇≈≠≡≤≥⊂⊃⊆⊇⊕⊗°",
         physics: "αβγδεηθλμνπρστφχψω∞ΔΣΩ",
@@ -60,7 +61,7 @@
             includeLowercase: document.getElementById('include-lowercase').checked,
             includeUppercase: document.getElementById('include-uppercase').checked,
             includeSymbols: document.getElementById('include-symbols').checked,
-            includePersonalized: document.getElementById('include-personalized').checked,
+            includeAccuteAccent: document.getElementById('include-accute-accent').checked,
             includeCurrency: document.getElementById('include-currency').checked,
             includeMathematics: document.getElementById('include-mathematics').checked,
             includePhysics: document.getElementById('include-physics').checked,
@@ -92,7 +93,7 @@
             input.placeholder = 'Disabled';
         }
     };
-
+    
     const loadState = () => {
         const savedSettings = localStorage.getItem('pwdGenSettings');
         if (savedSettings) {
@@ -143,7 +144,7 @@
                 updateInputState(checkbox, input);
             });
         }
-
+        
         const savedPasswords = JSON.parse(localStorage.getItem('savedPasswords') || '[]');
         renderPasswords(savedPasswords);
         updateUIState();
@@ -170,7 +171,7 @@
         const { prefix, suffix, mustInclude } = getSettings().customText;
         const charset = buildCharset();
         const excludeDuplicates = document.getElementById("exclude-duplicates").checked;
-
+        
         let totalFixedLength = (prefix.enabled ? prefix.value.length : 0) + 
                                (suffix.enabled ? suffix.value.length : 0) +
                                (mustInclude.enabled ? [...new Set(mustInclude.value)].length : 0);
@@ -201,7 +202,7 @@
             generateBtn.textContent = "SELECT A CHARACTER SET";
         }
     };
-
+    
     const renderPasswords = (passwords) => {
         passwordList.innerHTML = '';
         passwords.forEach(pwd => {
@@ -239,21 +240,21 @@
         if (document.getElementById("include-lowercase").checked) charset += CHARSETS.lowercase;
         if (document.getElementById("include-uppercase").checked) charset += CHARSETS.uppercase;
         if (document.getElementById("include-symbols").checked) charset += CHARSETS.symbols;
-        if (document.getElementById("include-personalized").checked) charset += CHARSETS.personalized;
+        if (document.getElementById("include-accute-accent").checked) charset += CHARSETS.accuteAccent;
         if (document.getElementById("include-currency").checked) charset += CHARSETS.currency;
         if (document.getElementById("include-mathematics").checked) charset += CHARSETS.mathematics;
         if (document.getElementById("include-physics").checked) charset += CHARSETS.physics;
 
         if (document.getElementById("exclude-similar").checked) charset = charset.replace(new RegExp(`[${CHARSETS.similar.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}]`, 'g'), "");
         if (document.getElementById("exclude-ambiguous").checked) charset = charset.replace(new RegExp(`[${CHARSETS.ambiguous.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}]`, 'g'), "");
-
+        
         const mustExcludeChars = mustExcludeCheckbox.checked ? mustExcludeInput.value : '';
         if (mustExcludeChars) {
             charset = charset.replace(new RegExp(`[${mustExcludeChars.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}]`, 'g'), "");
         }
         return charset;
     };
-
+    
     const shuffleArray = (array) => {
         for (let i = array.length - 1; i > 0; i--) {
             const j = secureRandom(i + 1);
@@ -272,7 +273,7 @@
 
         const remainingLength = length - password.length - suffix.length;
         let middlePart = Array.from(mustInclude);
-
+        
         const randomCharsNeeded = remainingLength - middlePart.length;
 
         if (randomCharsNeeded > 0) {
@@ -300,7 +301,7 @@
 
         const settings = getSettings();
         const charset = buildCharset();
-
+        
         const { prefix, suffix, mustInclude } = settings.customText;
         if ((prefix.enabled && !prefix.value) || (suffix.enabled && !suffix.value) || (mustInclude.enabled && !mustInclude.value) || (mustExcludeCheckbox.checked && !mustExcludeInput.value)) {
             showToast("Enabled custom fields cannot be empty!");
@@ -328,7 +329,7 @@
                 return;
             }
         }
-
+        
         const newPasswords = [];
         for (let i = 0; i < passwordCount; i++) {
             newPasswords.push(generateSinglePassword(settings));
@@ -339,7 +340,7 @@
         showToast(passwordCount > 1 ? "All passwords generated!" : "Password generated!");
         updateUIState();
     };
-
+    
     const handleCustomTextToggle = (checkbox, input) => {
         if (checkbox.checked) {
             input.value = storedCustomValues[input.id] || '';
@@ -352,6 +353,7 @@
         updateUIState();
     };
 
+    // --- Event Listeners ---
     document.addEventListener('DOMContentLoaded', loadState);
 
     window.addEventListener('beforeunload', (e) => {
@@ -381,7 +383,7 @@
             updateUIState();
         });
     });
-
+    
     document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
         checkbox.addEventListener('change', () => {
             if (checkbox.id.includes('-checkbox')) {
@@ -413,8 +415,7 @@
         });
         saveSettings();
         updateUIState();
-        updateCounters(); 
-
+        updateCounters();
         showToast('Custom options reset!');
     });
 
@@ -452,7 +453,7 @@
 
     const groups = {
         "Basic Characters": ["include-numbers", "include-lowercase", "include-uppercase", "include-symbols"],
-        "Special Characters": ["include-personalized", "include-currency", "include-mathematics", "include-physics"],
+        "Special Characters": ["include-accute-accent", "include-currency", "include-mathematics", "include-physics"],
         "Exclude Options": ["exclude-similar", "exclude-ambiguous", "exclude-duplicates", "exclude-consecutive"],
         "Custom Options": ["add-prefix-text-checkbox", "add-suffix-text-checkbox", "must-include-checkbox", "must-exclude-checkbox"]
     };
@@ -474,9 +475,9 @@
             if (counterSpan) counterSpan.textContent = `(${checked}/${total})`;
         }
     }
-
+    
     document.querySelectorAll("input[type=checkbox]").forEach(cb => cb.addEventListener("change", updateCounters));
-
+    
     document.querySelectorAll("details").forEach((detail, index) => {
         const saved = localStorage.getItem(`details-${index}`);
         if (saved === "open") detail.setAttribute("open", "");
