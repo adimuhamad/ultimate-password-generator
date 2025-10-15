@@ -29,86 +29,125 @@
         </div>
     </div>
     
-    <div class="option">
-        <input type="checkbox" id="add-initial-text-checkbox">
-        <label for="add-initial-text-checkbox" style="margin-right: 108px;">Add Initial Text:</label>
-        <input type="text" id="initial-text-input" placeholder="Add your initial text here" disabled>
-    </div>
     <hr>
-    <div class="option">
-        <input type="checkbox" id="include-numbers">
-        <label for="include-numbers">Include numbers:&nbsp;</label><span style="color: var(--secondary-text)">
-        <label for="include-numbers">0123456789</label></span>
-    </div>
+    
+    <details>
+      <summary><b>Basic Characters</b></summary>
+      <div class="option">
+          <input type="checkbox" id="include-numbers">
+          <label for="include-numbers">Include numbers:&nbsp;</label>
+          <span style="color: var(--secondary-text)">0123456789</span>
+      </div>
 
-    <div class="option">
-        <input type="checkbox" id="include-lowercase">
-        <label for="include-lowercase">Include lowercase:&nbsp;</label><span style="color: var(--secondary-text)">
-        <label for="include-lowercase">abcdefghijklmnopqrstuvwxyz</label></span>
-    </div>
+      <div class="option">
+          <input type="checkbox" id="include-lowercase">
+          <label for="include-lowercase">Include lowercase:&nbsp;</label>
+          <span style="color: var(--secondary-text)">abcdefghijklmnopqrstuvwxyz</span>
+      </div>
 
-    <div class="option">
-        <input type="checkbox" id="include-uppercase">
-        <label for="include-uppercase">Include uppercase:&nbsp;</label><span style="color: var(--secondary-text)">
-        <label for="include-uppercase">ABCDEFGHIJKLMNOPQRSTUVWXYZ</label></span>
-    </div>
+      <div class="option">
+          <input type="checkbox" id="include-uppercase">
+          <label for="include-uppercase">Include uppercase:&nbsp;</label>
+          <span style="color: var(--secondary-text)">ABCDEFGHIJKLMNOPQRSTUVWXYZ</span>
+      </div>
 
-    <div class="option">
-        <input type="checkbox" id="include-symbols">
-        <label for="include-symbols">Include symbols:&nbsp;</label><span style="color: var(--secondary-text)">
-        <label for="include-symbols">$%&@#~,.:;!?_*-+^=/|\()<>{}[]'`"</label></span>
-    </div>
+      <div class="option">
+          <input type="checkbox" id="include-symbols">
+          <label for="include-symbols">Include symbols:&nbsp;</label>
+          <span style="color: var(--secondary-text)">$%&@#~,.:;!?_*-+^=/|\()<>{}[]'`"</span>
+      </div>
+    </details>
+
     <hr>
-    <div class="option">
-        <input type="checkbox" id="include-personalized">
-        <label for="include-personalized">Include accute accent:&nbsp;</label><span style="color: var(--secondary-text)">
-        <label for="include-personalized">ÁáÉéÍíÓóÚúÝýĆćŃńŔŕŚśŹź</label></span>
-    </div>
 
-    <div class="option">
-        <input type="checkbox" id="include-currency">
-        <label for="include-currency">Include currency:&nbsp;</label><span style="color: var(--secondary-text)">
-        <label for="include-currency">₽€¥£₸₮₩₡₵₭₱₲₦ƒ₥₼৳₹₾₪₺₴ლ</label></span>
-    </div>
+    <details>
+      <summary><b>Special Characters</b></summary>
+      <div class="option">
+          <input type="checkbox" id="include-personalized">
+          <label for="include-personalized">Include accute accent:&nbsp;</label>
+          <span style="color: var(--secondary-text)">ÁáÉéÍíÓóÚúÝýĆćŃńŔŕŚśŹźǴǵḰḱĹĺ</span>
+      </div>
 
-    <div class="option">
-        <input type="checkbox" id="include-mathematics">
-        <label for="include-mathematics">Include mathematics:&nbsp;</label><span style="color: var(--secondary-text)">
-        <label for="include-mathematics">±×÷∫∑√∂≈≠≤≥∇≡⊂⊃⊆⊇⊕⊗°</label></span>
-    </div>
+      <div class="option">
+          <input type="checkbox" id="include-currency">
+          <label for="include-currency">Include currency:&nbsp;</label>
+          <span style="color: var(--secondary-text)">₽€¥£₸₮₩₡₵₭₱₲₦ƒ₥₼৳₹₾₪₺₴ლ</span>
+      </div>
 
-    <div class="option">
-        <input type="checkbox" id="include-physics">
-        <label for="include-physics">Include physics:&nbsp;</label><span style="color: var(--secondary-text)">
-        <label for="include-physics">αβγδεηθλμνπρστφχψω∞ΔΣΩ</label></span>
-    </div>
+      <div class="option">
+          <input type="checkbox" id="include-mathematics">
+          <label for="include-mathematics">Include mathematics:&nbsp;</label>
+          <span style="color: var(--secondary-text)">±×÷∫∑√∂≈≠≤≥∇≡⊂⊃⊆⊇⊕⊗°</span>
+      </div>
+
+      <div class="option">
+          <input type="checkbox" id="include-physics">
+          <label for="include-physics">Include physics:&nbsp;</label>
+          <span style="color: var(--secondary-text)">αβγδεηθλμνπρστφχψω∞ΔΣΩ</span>
+      </div>
+    </details>
+
     <hr>
-    <div class="option">
-        <input type="checkbox" id="exclude-similar">
-        <label for="exclude-similar">Exclude similar:&nbsp;</label><span style="color: var(--secondary-text)">
-        <label for="exclude-similar">1IiLlOo0</label></span>
-    </div>
 
-    <div class="option">
-        <input type="checkbox" id="exclude-ambiguous">
-        <label for="exclude-ambiguous">Exclude ambiguous:&nbsp;</label><span style="color: var(--secondary-text)">
-        <label for="exclude-ambiguous">~,.:;^/|\()<>{}[]'`"</label></span>
-    </div>
+    <details>
+      <summary><b>Exclude Options</b></summary>
+      <div class="option">
+          <input type="checkbox" id="exclude-similar">
+          <label for="exclude-similar">Exclude similar:&nbsp;</label>
+          <span style="color: var(--secondary-text)">1IiLlOo0</span>
+      </div>
 
-    <div class="option">
-        <input type="checkbox" id="exclude-duplicates">
-        <label for="exclude-duplicates">Exclude all duplicate characters</label>
-    </div>
+      <div class="option">
+          <input type="checkbox" id="exclude-ambiguous">
+          <label for="exclude-ambiguous">Exclude ambiguous:&nbsp;</label>
+          <span style="color: var(--secondary-text)">~,.:;^/|\()<>{}[]'`"</span>
+      </div>
 
-    <div class="option">
-        <input type="checkbox" id="exclude-consecutive">
-        <label for="exclude-consecutive">Exclude consecutive duplicate&nbsp;</label>
-        <label for="exclude-consecutive">characters</label>
-    </div>
+      <div class="option">
+          <input type="checkbox" id="exclude-duplicates">
+          <label for="exclude-duplicates">Exclude all duplicate characters</label>
+      </div>
+
+      <div class="option">
+          <input type="checkbox" id="exclude-consecutive">
+          <label for="exclude-consecutive">Exclude consecutive duplicate characters</label>
+      </div>
+    </details>
+    
+    <hr>
+    
+    <details>
+        <summary><b>Custom Options</b></summary>
+        <div class="option custom-option">
+            <input type="checkbox" id="add-prefix-text-checkbox">
+            <label for="add-prefix-text-checkbox">Prefix Text:</label>
+            <input type="text" id="prefix-text-input" disabled>
+        </div>
+        <div class="option custom-option">
+            <input type="checkbox" id="add-suffix-text-checkbox">
+            <label for="add-suffix-text-checkbox">Suffix Text:</label>
+            <input type="text" id="suffix-text-input" disabled>
+        </div>
+        <div class="option custom-option">
+            <input type="checkbox" id="must-include-checkbox">
+            <label for="must-include-checkbox">Must Include:</label>
+            <input type="text" id="must-include-input" disabled>
+        </div>
+        <div class="option custom-option">
+            <input type="checkbox" id="must-exclude-checkbox">
+            <label for="must-exclude-checkbox">Must Exclude:</label>
+            <input type="text" id="must-exclude-input" disabled>
+        </div>
+        <button id="reset-custom-btn" class="reset-btn">Reset</button>
+    </details>
 
     <button class="generate-btn" id="generate-btn">GENERATE PASSWORD NOW!</button>
     
     <div id="password-list"></div>
+
+    <footer>
+        Made with ❤️ by <a href="https://github.com/adimuhamad/ultimate-password-generator" target="_blank">MochAdiMR</a>
+    </footer>
 </div>
 
 <div id="toast-container"></div>
