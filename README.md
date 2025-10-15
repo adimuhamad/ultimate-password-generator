@@ -1,6 +1,6 @@
 # Ultimate Password Generator 🔐
 
-Ultimate Password Generator Screenshot A modern, feature-rich front-end web app for generating strong and secure passwords. Built with a clean and intuitive UI, it's packed with customization options to meet all your security needs.
+Ultimate Password Generator Screenshot A modern, feature-rich front-end web app for generating strong and secure passwords. Built with a clean and intuitive UI, it's packed with customization options to meet all your security needs. Get your powerful and personalized password now!
 
 ---
 
