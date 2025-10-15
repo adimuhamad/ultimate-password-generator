@@ -1,36 +1,73 @@
-# Ultimate Password Generator 🔐🛡️
+# Ultimate Password Generator 🔐
 
-Aplikasi web ini adalah alat canggih untuk menghasilkan kata sandi yang kuat dan aman. Dibuat dengan HTML, CSS, dan JavaScript murni, generator ini tidak hanya mudah digunakan tetapi juga penuh dengan fitur-fitur yang bisa disesuaikan sesuai kebutuhanmu. Kamu bisa menghasilkan satu atau banyak kata sandi sekaligus dengan berbagai kriteria, memastikan keamanan digitalmu selalu terjaga. 🚀
+Ultimate Password Generator Screenshot A modern, feature-rich front-end web app for generating strong and secure passwords. Built with a clean and intuitive UI, it's packed with customization options to meet all your security needs.
 
-## ✨ Fitur Unggulan
+---
 
--   **Kontrol Penuh:** Atur panjang (minimal 8, maksimal 32) dan jumlah (minimal 1, maksimal 8) kata sandi yang ingin kamu hasilkan dengan mudah menggunakan tombol `+` dan `-`.
--   **Kustomisasi Karakter:** Pilih kombinasi karakter yang kamu suka, seperti **angka, huruf kecil, huruf besar, simbol**, dan bahkan karakter yang dipersonalisasi seperti `áíúéó`.
--   **Opsi Keamanan Ekstra:** Tingkatkan kekuatan kata sandi dengan opsi untuk:
-    -   ❌ **Kecualikan Karakter Mirip:** Hindari karakter yang sering disalahartikan, seperti `1`, `I`, `l`, `L`, `o`, `O`, dan `0`.
-    -   ❌ **Kecualikan Karakter Ambigu:** Hapus simbol yang bisa membingungkan, seperti `~`, `,`, `.`, `:`, `;`, `^`, `/`, `|`, `\`, `(`, `)`, `<`.
-    -   ❌ **Kecualikan Duplikat:** Pastikan setiap karakter dalam kata sandi itu unik.
-    -   ❌ **Kecualikan Karakter Berturut-turut:** Cegah penggunaan karakter yang sama secara berurutan.
--   **Teks Awal Kustom:** Tambahkan teks atau awalan khusus pada setiap kata sandi yang dihasilkan, cocok untuk membuat kata sandi dengan pola tertentu.
--   **Ukur Kekuatan Kata Sandi:** Setiap kata sandi yang dihasilkan dilengkapi dengan indikator kekuatan yang jelas, lengkap dengan skor (`zxcvbn`) dan perkiraan waktu untuk meretasnya. Ini membantumu memilih kata sandi yang benar-benar kuat.
--   **Mode Gelap & Terang:** Ganti tema tampilan dengan satu klik. 🌙✨
--   **Salin Mudah:** Salin satu kata sandi atau semua kata sandi yang dihasilkan hanya dengan satu tombol.
--   **Pengaturan Otomatis Tersimpan:** Pengaturan terakhirmu (panjang, jumlah, opsi karakter) akan disimpan secara otomatis di *local storage* browser, jadi kamu tidak perlu mengaturnya lagi setiap kali membuka halaman.
+## 🔥 Key Features
 
-## 🛠️ Teknologi yang Digunakan
+This isn't just your average password generator. Here's a rundown of what it can do:
 
--   **HTML5:** Struktur dasar halaman web.
--   **CSS3:** Desain tampilan yang modern, responsif, dan dukungan untuk mode gelap.
--   **JavaScript (ES6+):** Logika utama untuk menghasilkan kata sandi yang acak dan aman.
--   **`zxcvbn.js`:** Library pihak ketiga yang digunakan untuk mengukur dan memberikan umpan balik tentang kekuatan kata sandi.
--   **`window.crypto.getRandomValues()`:** Menggunakan API kriptografi bawaan browser untuk menghasilkan angka acak yang lebih aman daripada `Math.random()`.
+#### **Basic & Advanced Controls**
+* **Length & Count**: Tweak the password length (8-32 chars) and the number of passwords to generate at once (1-8).
+* **Comprehensive Character Sets**:
+    * **Standard**: Numbers (`0-9`), Lowercase (`a-z`), Uppercase (`A-Z`), and common Symbols (`$%&@#`).
+    * **Special**: Accent characters (`ÁáÉé`), Currencies (`₽€¥£`), Mathematical (`±×÷∫`), and Physics (`αβγδε`).
+* **Exclusion Options**:
+    * Exclude similar-looking characters to avoid confusion (`1IiLlOo0`).
+    * Exclude ambiguous characters that can break formatting (`~,.:;^`).
+    * Ensure no duplicate characters are used at all.
+    * Prevent consecutive duplicate characters.
 
-## 💻 Cara Menggunakan
+#### **Power-User Customization**
+* **Prefix & Suffix**: Add custom text to the beginning or end of your passwords.
+* **Must-Include Characters**: Force the output to contain specific characters you need.
+* **Must-Exclude Characters**: Ban specific characters from ever appearing in the output.
+* **Reset Button**: Quickly clear all custom options with a single click.
 
-1.  Buka file `index.html` di browser favoritmu.
-2.  Sesuaikan panjang, jumlah, dan opsi karakter sesuai keinginan.
-3.  Klik tombol **"GENERATE PASSWORD NOW!"** untuk melihat hasilnya.
-4.  Gunakan tombol salin di samping setiap kata sandi atau tombol **"Copy All Passwords"** di bawah untuk menyalin semua kata sandi sekaligus.
+#### **Real-time Strength Analysis**
+* **Security Score**: Each password is analyzed using Dropbox's **zxcvbn** library, scoring it from 0 (very weak) to 4 (very strong).
+* **Visual Strength Bar**: An intuitive color-coded bar (red to blue) visually represents the password's strength.
+* **Crack Time Estimation**: Get a realistic estimate of how long it would take to crack your password.
+* **Suggestions & Warnings**: Receive helpful feedback and suggestions to make your password even better.
+
+#### **Premium User Experience (UX)**
+* **Light & Dark Mode**: A comfortable viewing experience at any time of day, with your theme preference saved automatically.
+* **One-Click Copy**: Easily copy any password to your clipboard.
+* **Session Persistence**: Generated passwords remain even after a page reload, preventing accidental loss.
+* **Exit Confirmation**: Get a warning before closing the tab with generated passwords, ensuring you don't lose important results.
+* **Toast Notifications**: Clear, non-intrusive feedback for actions like "Copied!" or "Options Reset."
+* **Persistent Settings**: All your preferences are saved in the browser's `localStorage`, so you don't have to set them up again on every visit.
+
+---
+
+## 🛠️ Tech Stack
+
+* **HTML5**: For semantic web structure.
+* **CSS3**: For modern, responsive design using Flexbox and CSS Variables for dynamic theming.
+* **Vanilla JavaScript (ES6+)**: For all the core application logic, with zero external frameworks.
+* **zxcvbn.js**: For robust password strength estimation.
+
+---
+
+## 🚀 Running Locally
+
+This app doesn't require any complex builds or installations. Just follow these steps:
+
+1.  **Clone the repository:**
+    ```bash
+    git clone [https://github.com/MochAdiMR/password-generator.git](https://github.com/MochAdiMR/password-generator.git)
+    ```
+2.  **Navigate to the project directory:**
+    ```bash
+    cd password-generator
+    ```
+3.  **Open the `index.html` file** in your favorite browser. That's it!
+
+---
 
 ## 📸 Screenshot
+
 <img width="412" height="622" alt="image" src="https://github.com/user-attachments/assets/9a950c33-7533-412f-a7ac-d9a81c46d7c3" />
+
+**Note:** This is a screenshot of the old version, try checking the live demo to see how the latest version looks.
