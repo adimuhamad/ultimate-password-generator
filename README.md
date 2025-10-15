@@ -70,4 +70,4 @@ This app doesn't require any complex builds or installations. Just follow these 
 
 <img width="412" height="622" alt="image" src="https://github.com/user-attachments/assets/9a950c33-7533-412f-a7ac-d9a81c46d7c3" />
 
-**Note:** This is a screenshot of the old version, try checking the live demo to see how the latest version looks.
+**Note:** This is a screenshot of the old version, try checking the live demo to see how the latest version looks. I'm too lazy to take a new screenshot, sorry not sorry.
