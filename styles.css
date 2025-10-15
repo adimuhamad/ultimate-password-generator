@@ -4,7 +4,7 @@
     --text-color: #333333;
     --secondary-text: #666666;
     --border-color: #e0e0e0;
-    --accent-color: #2e8b57;
+    --accent-color: #2e8b57; 
     --button-bg: #2e8b57;
     --button-text: #ffffff;
     --button-hover: #287a4c;
@@ -12,6 +12,7 @@
     --input-bg: #f8f8f8;
     --input-border: #cccccc;
     --danger-color: #e74c3c;
+    --danger-hover: #c0392b;
     --toast-bg: #333;
     --toast-text: #fff;
 }
@@ -22,6 +23,7 @@ body.dark-mode {
     --text-color: #ecf0f1;
     --secondary-text: #bdc3c7;
     --border-color: #44607a;
+    --accent-color: #3498db; 
     --button-bg: #3498db;
     --button-text: #ffffff;
     --button-hover: #2980b9;
@@ -29,6 +31,7 @@ body.dark-mode {
     --input-bg: #4c627a;
     --input-border: #6d849b;
     --danger-color: #e74c3c;
+    --danger-hover: #c0392b;
     --toast-bg: #ecf0f1;
     --toast-text: #333;
 }
@@ -55,7 +58,7 @@ body {
     border-radius: 16px;
     padding: 30px;
     width: 100%;
-    max-width: 425px;
+    max-width: 430px;
     box-shadow: var(--shadow);
     transition: background-color 0.3s, box-shadow 0.3s;
 }
@@ -64,7 +67,7 @@ h2 {
     margin-top: 0;
     text-align: center;
     font-weight: 700;
-    color: var(--accent-color);
+    color: var(--text-color);
     letter-spacing: -0.5px;
 }
 
@@ -215,10 +218,12 @@ h2 {
 
 .all-actions {
     margin-top: 20px;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
 }
 
-.all-actions .copy-all-btn {
+.all-actions .action-btn {
     padding: 10px 20px;
     border: 1px solid var(--accent-color);
     background: transparent;
@@ -229,12 +234,22 @@ h2 {
     transition: all 0.3s;
 }
 
-.all-actions .copy-all-btn:hover {
+.all-actions .action-btn:hover {
     background: var(--accent-color);
     color: var(--button-text);
 }
 
-/* Stackable Toast Container */
+.all-actions .delete-btn {
+    border-color: var(--danger-color);
+    color: var(--danger-color);
+}
+
+.all-actions .delete-btn:hover {
+    background: var(--danger-color);
+    border-color: var(--danger-color);
+    color: var(--button-text);
+}
+
 #toast-container {
     position: fixed;
     bottom: 20px;
@@ -279,27 +294,66 @@ h2 {
     transition: background-color 0.3s, color 0.3s;
 }
 
-/* CSS tambahan untuk input teks awal */
-#initial-text-option {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px;
+.custom-option {
+
 }
 
-#initial-text-input {
+.custom-option label {
+    flex-shrink: 0;
+}
+
+.custom-option input[type="text"] {
     padding: 8px 10px;
     border: 1px solid var(--input-border);
     border-radius: 8px;
     background: var(--input-bg);
     color: var(--text-color);
-    flex-grow: 1;
     transition: all 0.3s;
+    width: 140px;
+    flex-grow: 0;
+    margin-left: auto;
 }
 
-#initial-text-input:disabled {
+.custom-option input[type="text"]:disabled {
     background: var(--border-color);
     cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.reset-btn {
+    padding: 6px 12px;
+    margin-top: 4px;
+    border: 1px solid var(--secondary-text);
+    color: var(--secondary-text);
+    background: transparent;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.reset-btn:hover {
+    background: var(--secondary-text);
+    color: var(--card-bg);
+}
+
+footer {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 0.9em;
+    color: var(--secondary-text);
+}
+
+footer a {
+    color: inherit;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: var(--accent-color);
 }
 
 @media (max-width: 600px) {
@@ -309,9 +363,24 @@ h2 {
     }
     #toast-container {
         bottom: unset;
-        right: unset;
         top: 20px;
-        left: 20px;
-        flex-direction: column-reverse;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
     }
+}
+
+summary {
+  position: relative;
+  padding-right: 60px;
+  cursor: pointer;
+}
+
+.group-counter {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-weight: bold;
+  color: var(--secondary-text);
 }
